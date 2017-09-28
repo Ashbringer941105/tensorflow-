@@ -1,0 +1,13 @@
+一、卷积层
+x为输入图片矩阵，w为卷积核   strides中的第二第三位是卷积核移动的步长，可以改变，第一和第四位保持为1
+conv = tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
+二、池化层
+1.maxpooling    
+max_pool = tf.nn.max_pool(x, ksize=[1, 2, 2, 1],strides=[1, 2, 2, 1], padding='SAME')
+2.meanpooling
+3.soc pooling
+三、激活层,w为输入的矩阵
+relu_output = tf.nn.relu(w)
+四、dropout层
+h_pool3_drop = tf.nn.dropout(h_pool3_flat, keep_prob=keep_prob)
+五、全连接层
