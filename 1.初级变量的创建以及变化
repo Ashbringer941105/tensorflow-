@@ -1,4 +1,4 @@
-一、变量的建立
+一、tensor变量的建立
 1.新tensor常亮的建立
 tensor=tf.constant（常量的值)
 2.variable变量的建立
@@ -18,3 +18,9 @@ print(sess.run(tensor))
 二、变量的操作
 tf.reshape(tensor,[shape])就是将tensor变换为shape的形状，如果shape中出现了-1.则说明这个位置的形状或者大小为缺省值，
 优先排列确定的shape值，
+
+
+三、图像的读取
+from scipy import misc
+img = misc.imread('路径')
+img = misc.imread(os.path.join(路径,文件名))
