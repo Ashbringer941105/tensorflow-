@@ -1,11 +1,14 @@
 一、tensor变量的建立
 1.新tensor常亮的建立
 tensor=tf.constant（常量的值)
-2.variable变量的建立
+2.variable变量的建立，variable用于存放一些可训练变量
 方法1  w = tf.Variable(tf.Variable(initial_value=None, trainable=True, collections=None,validate_shape=True,
       caching_device=None, name=None, variable_def=None, dtype=None, expected_shape=None, import_scope=None)
 方法2  w = tf.get_variable(name, shape=None, dtype=None, initializer=None, regularizer=None, trainable=True,
       collections=None, caching_device=None, partitioner=None, validate_shape=True, custom_getter=None)
+3.tf.placeholder的建立，placeholder用用于得到传递进来的真实的训练样本，占位符
+placeholder = tf.placeholder(数据类型比如tf.float32,shape)
+
 
 
 输出一个tensor：
@@ -21,6 +24,7 @@ tf.reshape(tensor,[shape])就是将tensor变换为shape的形状，如果shape�
 
 
 三、图像的读取
+1.scipy.misc读取图片，以这种方式读取的图片是一个[img.w,img.h,3]的tensor
 from scipy import misc
 img = misc.imread('路径')
 img = misc.imread(os.path.join(路径,文件名))
